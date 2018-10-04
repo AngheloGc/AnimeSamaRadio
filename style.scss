@@ -126,6 +126,10 @@ main {
 section {
     border-radius: 0.25em;
     overflow: hidden;
+
+    @include breakpoint(m) {
+        grid-row: span 1
+    }
 }
 
 .active-song-box {

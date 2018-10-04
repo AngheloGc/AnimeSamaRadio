@@ -80,6 +80,9 @@ main {
 section {
   border-radius: 0.25em;
   overflow: hidden; }
+  @media (max-width: 768px) {
+    section {
+      grid-row: span 1; } }
 
 .active-song-box {
   display: grid;
