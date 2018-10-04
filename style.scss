@@ -2,6 +2,28 @@
     box-sizing: border-box;
 }
 
+@mixin breakpoint($class) {
+    @if $class == s {
+      @media (max-width: 320px) { @content; }
+    }
+   
+    @else if $class == m {
+      @media (max-width: 768px) { @content; }
+    }
+   
+    @else if $class == l {
+      @media (max-width: 1024px) { @content; }
+    }
+   
+    @else if $class == xl {
+      @media (max-width: 1980px) { @content; }
+    }
+   
+    @else {
+      @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+  }
+
 @keyframes appearNotification {
     0% {top: -200px;}
     5% {top: 0px;}
@@ -92,6 +114,13 @@ main {
     grid-template-columns: 65% 35%;
     grid-template-rows: minmax(auto,500px) minmax(auto,500px) auto;
     grid-gap: 1em;
+
+    @include breakpoint(s) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,minmax(auto,500px))
+    }
+
+
 }
 
 section {
