@@ -115,7 +115,7 @@ main {
     grid-template-rows: minmax(auto,500px) minmax(auto,500px) auto;
     grid-gap: 1em;
 
-    @include breakpoint(s) {
+    @include breakpoint(m) {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4,minmax(auto,500px))
     }
