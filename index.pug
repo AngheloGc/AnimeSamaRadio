@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="style.css")
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
+        title Anime Sama Radio | Música Anime para todos
+    body
+        header
+            .header-logo
+                img(src="img/logo.png", alt="Anime Sama Radio")
+                span Anime Sama Radio
+            .header-user
+                p Bienvenido #[span Usuario]
+        main
+            section
+                .active-song-box
+                    img(src="img/song.jpg", alt="Active Song")
+                    .song-description
+                        span Transmitiendo ahora:
+                        h2 No Game No Life
+                        p Opening 3
+                        .next-song
+                            span Siguiente canción:
+                            h4 No Game No Life
+                            p Opening 2
+                        img(src="img/sound.gif", alt="Sound")
+            section
+                .song-list-box
+                    .song-list-box-header
+                        span.list-active En cola
+                        span Reproducidas
+                    .song-list-box-body
+                        each val in [1, 2, 3, 4, 5,6,7,8,9]
+                            .song-item
+                                img.song-item-image(src="img/song.jpg", alt="Canción")
+                                .song-item-description
+                                    h4 No Game No Life
+                                    p Opening 3
+                                .song-item-delete
+                                    span x
+            section
+                .song-modifier-box
+                    .song-modifier-box-options
+                        span.list-active Crear
+                        span Modificar
+                        span Eliminar
+                    .song-modifier-box-details
+                        form(action="get")
+                            label Nombre de Anime
+                            input#songname(type="text")
+                            label Tipo de Canción
+                            select#songtype(name="Tipo")
+                                each val in ['Opening','Ending']
+                                    option(value=val) #{val}
+                            label Número (Se puede dejar vacío este campo)
+                            input#songnumber(type="number", name="Número")
+                            label Imagen 
+                            input#songimage(type="file", name="Imagen")
+                            input(type="submit", value="Crear")
+            section
+                .add-song-box
+                    .add-song-box-form
+                        input(type="text" placeholder="Agregar una canción...")
+                    .add-song-box-list
+                        each val in [1, 2, 3, 4, 5,6,7,8,9]
+                            .song-item
+                                img.song-item-image(src="img/song.jpg", alt="Canción")
+                                .song-item-description
+                                    h4 No Game No Life
+                                    p Opening 3
+                                .song-item-add
+                                    span +
+            footer
+                p Anime Sama © 2018 | Todos los derechos reservados
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    script 
+    -    var config = {
+            apiKey: "AIzaSyAjKp_f5F1Tp22oJGQscVHQ6YYgXQH02VE",
+            authDomain: "anime-sama-radio.firebaseapp.com",
+            databaseURL: "https://anime-sama-radio.firebaseio.com",
+            projectId: "anime-sama-radio",
+            storageBucket: "",
+            messagingSenderId: "709190102912"
+        };
+        firebase.initializeApp(config);
+    
+    script(src="script.js")

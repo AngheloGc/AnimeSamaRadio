@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="style.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
+    <title>Anime Sama Radio | Música Anime para todos</title>
+  </head>
+  <body>
+    <div id="notification-box" class="notification-box">
+      <p id="notification-box-text" class="notification-box-text">Text</p>
+    </div>
+    <header>
+      <div class="header-logo"><img src="img/logo.png" alt="Anime Sama Radio"/><span>Anime Sama Radio</span></div>
+      <div class="header-user">
+        <p>Bienvenido <span>Usuario</span></p>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div id="active-song-box" class="active-song-box"><img id="first-song-in-list-image"src="img/loading.gif" alt="Active Song"/>
+          <div class="song-description"><span>Transmitiendo ahora:</span>
+            <h2 id="first-song-in-list-name"></h2>
+            <p id="first-song-in-list-type-number"></p>
+            <div class="next-song"><span>Siguiente canción:</span>
+              <h4 id="second-song-in-list-name"></h4>
+              <p id="second-song-in-list-type-number"></p>
+            </div><img src="img/sound.gif" alt="Sound"/>
+          </div>
+        </div>
+        <!-- <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAnimeSamaRadio%2Fvideos%2F323470781759902%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe> -->
+      </section>
+      <section>
+        <div class="song-list-box">
+          <div class="song-list-box-header"><span class="list-active">En cola</span><span>Reproducidas</span></div>
+          <div id="song-list-box" class="song-list-box-body">
+            <!-- <div class="song-item"><img class="song-item-image" src="img/song.jpg" alt="Canción"/>
+              <div class="song-item-description">
+                <h4>No Game No Life</h4>
+                <p>Opening 3</p>
+              </div>
+              <div class="song-item-delete"><span>x</span></div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="song-modifier-box">
+          <div class="song-modifier-box-options"><span class="list-active">Crear</span><span>Modificar</span><span>Eliminar</span></div>
+          <div class="song-modifier-box-details">
+            <form id="createSong" action="get">
+              <label>Nombre de Anime</label>
+              <input id="songname" type="text"/>
+              <label>Tipo de Canción</label>
+              <select id="songtype" name="Tipo">
+                <option value="Opening">Opening</option>
+                <option value="Ending">Ending</option>
+              </select>
+              <label>Número</label>
+              <input id="songnumber" type="number" name="Número"/>
+              <label>Imagen </label>
+              <input id="songimage" type="file" accept="image/png, image/jpeg" name="Imagen"/>
+              <input type="submit" value="Crear"/>
+              <div id="item-loader" class="item-loader">
+                <span id="item-loader-counter">Creando canción...</span>
+                <img src="img/loading-item.gif" alt="Loading">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="add-song-box">
+          <div class="add-song-box-form">
+            <input onkeypress="searchSong()" id="add-song-input" type="text" placeholder="Agregar una canción..."/>
+          </div>
+          <div id="add-song-box-list" class="add-song-box-list">
+            <!-- <div class="song-item"><img class="song-item-image" src="img/song.jpg" alt="Canción"/>
+              <div class="song-item-description">
+                <h4>No Game No Life</h4>
+                <p>Opening 3</p>
+              </div>
+              <div class="song-item-add"><span>+</span></div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>Anime Sama © 2018 | Todos los derechos reservados</p>
+      </footer>
+    </main>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script src="script.js"></script>
+</html>
