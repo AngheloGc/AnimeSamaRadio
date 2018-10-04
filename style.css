@@ -75,7 +75,7 @@ main {
   @media (max-width: 768px) {
     main {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, minmax(auto, 500px)); } }
+      grid-template-rows: auto; } }
 
 section {
   border-radius: 0.25em;

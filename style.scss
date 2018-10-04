@@ -117,7 +117,7 @@ main {
 
     @include breakpoint(m) {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,minmax(auto,500px))
+        grid-template-rows: auto;
     }
 
 
